@@ -10,6 +10,4 @@ The metagenome analysis will follow the steps outlined in the diagram below.
 
 ![image](https://github.com/user-attachments/assets/7b167054-300f-4eaa-85b0-a6a6ecaa6767)
 
-> The workshop material has been designed and organized by Maria Alejandra Soto and Dorian Rojas-Villalta, secondees of the CABANAnet project "Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Population at Nutritional Risk".
-
 ---
