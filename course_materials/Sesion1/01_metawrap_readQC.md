@@ -27,7 +27,7 @@ Once the manifest file is ready, create a new folder named `02_clean_reads`. Ins
 
 ### Create and Execute the Bash Script to Run the metaWRAP QC Module
 
-To process the sequencing reads using the metaWRAP Read QC module, create a Bash script named `run_metawrap_qc.sh`,  copy the script below, and update the necessary paths before running. This script will submit a SLURM job to execute the quality control steps for each sample listed in the manifest file.
+To process the sequencing reads using the metaWRAP Read QC module, create a Bash script named `run_metawrap_qc.sh`,  copy the script below, and update the `manifest` variable before running. This script will submit a SLURM job to execute the quality control steps for each sample listed in the manifest file.
 
 ```
 #!/bin/bash
