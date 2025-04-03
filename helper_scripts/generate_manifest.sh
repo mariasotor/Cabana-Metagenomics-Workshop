@@ -1,5 +1,3 @@
-```
-
 fastq_paths="$1"
 
 echo "ID,R1,R2" > manifest.csv  # Create header row
@@ -20,5 +18,3 @@ while read line; do  # Use semicolon for better readability
     fi
 done < "$fastq_paths"
 
-
-```
