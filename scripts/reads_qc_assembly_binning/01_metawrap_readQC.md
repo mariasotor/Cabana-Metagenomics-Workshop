@@ -78,7 +78,7 @@ Once your samples have finished processing, you will see the following structure
 
 To facilitate downstream analysis, the final_pure_reads files should be renamed as sampleID_1.fastq and sampleID_2.fastq and moved to the cleaned_reads folder created earlier.
 
-To rename and move the files, use the `rename_and_move_fastq.sh` script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy this script to your `02_clean_reads` directory and update the `parent_folder` and `destination_folder` variables accordingly.
+To rename and move the files, use the `rename_and_move_fastq.sh` script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy this script to your `02_clean_reads` directory, open it, and update the `parent_folder` and `destination_folder` variables as needed. Then, run the script using `bash rename_and_move_fastq.sh`
 
 
 
