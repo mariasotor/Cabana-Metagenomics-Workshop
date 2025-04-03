@@ -12,7 +12,7 @@ The Read QC module of metaWRAP performs three key steps:
 
 ### Preparing the Manifest File
 
-Before running the metaWRAP Read QC module, you must create a manifest file to specify the paired sequencing files. This file must be in comma-separated (CSV) format with three columns: ID (Sample identifier), R1 (Path to the forward read file), R2 (Path to the reverse read file). The manifest file ensures a standardized input format and facilitates scalability. 
+Before running the metaWRAP Read QC module, you need to create a manifest file in the `01_raw_reads` directory to reference the paired sequencing files. This file must be in comma-separated (CSV) format with three columns: ID (Sample identifier), R1 (Path to the forward read file), R2 (Path to the reverse read file). The manifest file ensures a standardized input format and facilitates scalability. 
 
 To contruct such manifest follow the instructions here: [generate_manifest](
 https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/helper_scripts/generate_manifest.md)
@@ -27,7 +27,7 @@ Once the manifest file is ready, create a new folder named `02_clean_reads`. Ins
 
 ### Create and Execute the Bash Script to Run the metaWRAP QC Module
 
-To process the sequencing reads using the metaWRAP Read QC module, create a Bash script named `run_metawrap_qc.sh`,  copy the script below, and update the `manifest` variable before running. This script will submit a SLURM job to execute the quality control steps for each sample listed in the manifest file.
+To process the sequencing reads using the metaWRAP Read QC module, create a Bash script named `run_metawrap_qc.sh`, copy the script below, and update the `manifest` variable with the correct path before running. This script submits a SLURM job to perform quality control on each sample listed in the manifest file, saving the output in the `metawrap_qc_out` directory.
 
 ```
 #!/bin/bash
