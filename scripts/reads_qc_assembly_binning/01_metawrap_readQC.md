@@ -14,7 +14,8 @@ The Read QC module of metaWRAP performs three key steps:
 
 Before running the metaWRAP Read QC module, you must create a manifest file to specify the paired sequencing files. This file must be in comma-separated (CSV) format with three columns: ID (Sample identifier), R1 (Path to the forward read file), R2 (Path to the reverse read file). The manifest file ensures a standardized input format and facilitates scalability. 
 
-To contruct such manifest follow the instructions here: [generate_manifest](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/helper_sripts/generate_manifest.md)
+To contruct such manifest follow the instructions here: [generate_manifest](
+https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/helper_scripts/generate_manifest.md)
 
 ### Setting Up Output Directories
 
