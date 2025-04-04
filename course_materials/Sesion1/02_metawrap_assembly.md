@@ -1,10 +1,10 @@
 # Assembling Metagenomic Reads with the metaWRAP Assembly Module
 
-# Asembly module overwiew
+### Asembly module overwiew
 
 The metaWRAP Assembly module enables users to assemble metagenomic reads using either metaSPAdes or MEGAHIT (default). During the process, short contigs (<1000 bp) are removed to improve assembly quality. Additionally, a assembly report is generated using QUAST, providing metrics for evaluating the results.
 
-# Preparing the Manifest File
+### Preparing the Manifest File
 
 The reads stored in the `cleaned_reads` directory during the quality control step will serve as the input files for assembly. Therefore, a **new manifest** file should be created to reference these cleaned reads. Save the new manifest file in the `02_clean_reads` directory.
 
