@@ -101,6 +101,6 @@ Once the binning and bin refinement procesess have finished, you will see the fo
 
 To facilitate downstream analysis, the sey of bins in the `metawrap_50_5_bins` directory should be renamed as sampleID_binIdenfier.fa (e.g., 50027_3_3_bin.2.fa, 50027_3_3_bin.2.fa, etc.).
 
-To rename the files, use the `rename_bins.sh` script located at located at /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts. Copy the script to your `04_binning_and_refinement` directory, open it, and update the `parent_folder` variable with the correct path. Then, run the script using `bash rename_bins.sh`.
+To rename the files, use the `rename_bins.sh` script located at located at /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts. Copy the script file to your `04_binning_and_refinement` directory, open it, and update the `parent_folder` variable with the correct path. Then, run the script using `bash rename_bins.sh`.
 
 
