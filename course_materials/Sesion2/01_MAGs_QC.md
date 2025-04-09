@@ -17,7 +17,7 @@ Create a new folder named `05_MAGs_qc`. Inside this folder, create the following
 ├── 📁 `checkm2_and_gunc_out_concat`/ (store the combined results from both CheckM2 and GUNC) <br>
 ├── 📁 `MAGs_pass`/ (store final, curated MAGs suitable for downstream analysis)
 
-### Create and Execute the Bash Script to Run GUNC and CheckM2 
+### Create and Execute the Bash Scripts to Run GUNC and CheckM2 
 
 To run the tools, create two Bash scripts: `run_gunc.sh` and `run_checkm2.sh`. Copy the scripts below accordingly. Before executing them, update the `MAGs_folder` variable with the correct path to your refined MAGs directory (`metawrap_50_5_bins`).
 
