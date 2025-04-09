@@ -66,7 +66,7 @@ checkm2 predict --threads 8 --input $MAGs_folder -x .fa --output-directory check
 After creating and saving the scripts, make them executable and submit them to the cluster:
 
 ```
-chmod +x run_gunc.sh.sh
+chmod +x run_gunc.sh
 chmod +x run_checkm2.sh
 
 sbatch run_gunc.sh.sh
