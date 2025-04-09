@@ -1,4 +1,4 @@
-# Quality assesment of MAGs
+# Quality Assesment of MAGs
 
 ### Tools Overview
 
@@ -94,7 +94,7 @@ Once the processes are complete, the `05_MAGs_qc` directory will contain the fol
 - `gene_calls` – Stores predicted gene sequences and annotations from MAGs, used by GUNC to evaluate phylogenetic consistency.
 - `GUNC.progenomes_2.1.maxCSS_level.tsv` – file summarizing the GUNC analysis, including chimerism scores and taxonomic inconsistencies for each MAG.
 
-### Concatenate GUNC and CheckM2 results for curated MAGs selection
+### Curated set of MAGs Using GUNC and CheckM2 Data
 
 The set of curated MAGs includes MAGs that passed GUNC’s contamination checks and meet the quality threshold of contamination < 5% and completeness > 50%.
 
