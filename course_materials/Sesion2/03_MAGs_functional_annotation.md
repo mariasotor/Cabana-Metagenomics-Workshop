@@ -78,21 +78,29 @@ After creating and saving the scripts, make them executable and submit them to t
 chmod +x run_bakta.sh
 chmod +x run_amrfinder.sh
 
-sbatch run_amrfinder.sh
 sbatch run_bakta.sh
+sbatch run_amrfinder.sh
 ```
 
 ### Output Description
 
-Once the processes are complete, the `07_MAGs_func_annotation` directory will contain the following structure:
+After completing the functional annotation process, the `07_MAGs_func_annotation` directory will have the following structure
 
-📂 `07_MAGs_func_annotation`/ <br>
-│── 📂 `amrfinder_out`/ <br>
-│ ├── 📄 MAG_ID.tsv/ <br>
-│ ├── 📄 quality_report.tsv/ <br>
-│ <br>
-│── 📂 `bakta_out`/ <br>
-│ ├── 📂 MAG_ID/ <br>
-│ ├── 📄 GUNC.progenomes_2.1.maxCSS_level.tsv
+📂 07_MAGs_func_annotation/ <br> 
+│── 📂 amrfinder_out/  <br>
+│   ├── 📄 MAG_ID.tsv  (antimicrobial resistance gene predictions)  <br>
+│  <br>
+│── 📂 bakta_out/  <br>
+│   ├── 📂 MAG_ID/  <br>
+│       ├── 📄 MAG_ID.tsv  (functional annotation for predicted genes) <br>
+│       ├── Multiple files containing:  <br>
+│           • **Gene predictions and functional features identification** (e.g., CDS, rRNA, tRNA annotations)  
+│           • **Functional annotations** (e.g., protein functions, pathways)  
+│           • **Hypothetical proteins** and their potential functional inference  
+│           • **GenBank & EMBL-compatible files** for database submissions  
+│           • **Visualization files** (e.g., genome feature maps in PNG, SVG)  
+│           • **Log & summary reports** documenting the annotation process  
+
+For a detailed description of Bakta output files, refer to the [Bakta documentation](https://github.com/oschwengers/bakta?tab=readme-ov-file#output).
 
 
