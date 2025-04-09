@@ -29,7 +29,7 @@ To process the cleaned reads using the metaWRAP Asembly module, create a Bash sc
 #SBATCH -D .
 #SBATCH -e metawrap_assembly_%j.err
 #SBATCH -o metawrap_assembly_%j.out
-#SBATCH -n 8
+#SBATCH --cpus-per-task=8
 #SBATCH --time=4:00:00	
 #SBATCH --mem=6000	
 
