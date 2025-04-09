@@ -39,7 +39,7 @@ This script submits a SLURM job to perform  two processes:
 #SBATCH -D .
 #SBATCH -e metawrap_binning_and_refinement_%j.err
 #SBATCH -o metawrap_binning_and_refinement_%j.out
-#SBATCH -n 8
+#SBATCH --cpus-per-task=8
 #SBATCH --time=6:00:00	
 #SBATCH --mem=16000	
 
