@@ -12,7 +12,7 @@ Create a new folder named `06_MAGs_taxonomy` Inside this folder, create the foll
 📂 `06_MAGs_taxonomy`/ <br>
 ├── 📁 `gtdbtk_out`/
 
-### Create and Execute the Bash Script to Run the GTDB-Tk
+### Create and Execute the Bash Script to Run GTDB-Tk
 
 Since GTDB-Tk requires high RAM usage (~100 GB), **this step will be demonstrative**, and only the instructor will execute it. However, below are the steps you can follow to run the program.
 
