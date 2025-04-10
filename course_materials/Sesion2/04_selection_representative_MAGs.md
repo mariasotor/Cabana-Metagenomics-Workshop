@@ -63,10 +63,10 @@ sbatch run_drep.sh
 
 Once the dereplication process is complete, you will see the following structure inside the `drep_out` directory:
 
-📂 `drep_out`/
-│── 📂 `data_tables`/
-│── 📂 `dereplicated_genomes`/
-│── 📂 `figures`/
+📂 `drep_out`/ <br>
+│── 📂 `data_tables`/ <br>
+│── 📂 `dereplicated_genomes`/ <br>
+│── 📂 `figures`/ <br>
 │── 📂 `log`/
 
 
