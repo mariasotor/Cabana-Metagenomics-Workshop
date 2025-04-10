@@ -36,7 +36,7 @@ To process the sequencing reads using the metaWRAP Read QC module, create a Bash
 #SBATCH -D .
 #SBATCH -e metawrap_qc_%j.err
 #SBATCH -o metawrap_qc_%j.out
-#SBATCH -n 8
+#SBATCH --cpus-per-task=8
 #SBATCH --time=2:00:00	
 #SBATCH --mem=9000	
 
