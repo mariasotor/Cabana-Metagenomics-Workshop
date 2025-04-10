@@ -24,7 +24,7 @@ Create a new folder named `09_abundance_estimation`. Inside this folder, create 
 
 **Step 1: Concatenate Representative MAGs**
 
-Before building the Bowtie2 index, we need a single FASTA file containing all representative MAGs. This requires merging individual MAG FASTA files into one. To generate this file, use the `concatenate_mags.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `09_abundance_estimation` directory and execute it using `bash concatenate_mags.sh`.
+Before building the Bowtie2 index, we need a single FASTA file containing all representative MAGs. This requires merging individual MAG FASTA files into one. To generate this file, use the `concatenate_mags.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `09_abundance_estimation` directory, update the `dereplicated_genomes` variable with the correct path, and execute it using `bash concatenate_mags.sh`.
 
 This script will generate a file named `reference_genomes.fasta`, containing all merged MAGs.
 
