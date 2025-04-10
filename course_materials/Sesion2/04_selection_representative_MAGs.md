@@ -52,5 +52,35 @@ dRep dereplicate ./drep_out -g $MAGs_path_file -p 8 -comp 50 -con 5 --S_ani 0.95
 
 ```
 
+After creating and saving the script, make it executable and submit to the cluster:
+
+```
+chmod +x run_drep.sh
+sbatch run_drep.sh
+```
+
 ### Output Description
+
+Once the dereplication process is complete, you will see the following structure inside the `drep_out` directory:
+
+📂 `drep_out`/
+│── 📂 `data_tables`/
+│── 📂 `dereplicated_genomes`/
+│── 📂 `figures`/
+│── 📂 `log`/
+
+
+- `data_tables` – Stores summary tables related to genome quality, clustering, and pairwise comparisons.
+- `dereplicated_genomes` – Contains the set of representative (dereplicated) genomes in FASTA format.
+- `figures` – Includes graphical representations of genome clustering and similarity comparisons.
+- `log` – Contains log files that track the execution of dRep, including processing steps, warnings, and errors.
+
+### Ensure Unique Contig Names in Dereplicated MAGs for Reference Database Creation and Bowtie2 Indexing
+
+Before concatenating dereplicated MAGs for Bowtie2 indexing, contig names must be unique to prevent conflicts. For this reason, we will modify the contig names using the format `MAG_ID_c_contig_number`.
+Example: `49647_1_2_bin.1_c_000000000001`, `49647_1_2_bin.1_c_000000000002`, `49647_1_2_bin.1_c_000000000003`, etc.
+
+To acieve this, use the `change_contigs_name.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `08_drep` directory, update the `input_dir` variable with the correct path, and execute it using `bash change_contigs_name.sh`.
+
+This will rename all contigs in the MAGs within the `dereplicated_genomes` directory to the specified format.
 
