@@ -40,6 +40,13 @@ gtdbtk classify_wf --batchfile ${batchfile} -x fa --skip_ani_screen --cpus 8 --o
 
 **Note**: The `--skip_ani_screen` option is used. According to the GTDB-Tk developers, results are nearly identical whether or not this option is enabled, with differences affecting less than 0.1% of genomes. Since ANI screening requires additional computational resources and provides no significant advantage in most cases, it is skipped.
 
+After creating and saving the script, make it executable and submit to the cluster:
+
+```
+chmod +x run_gtdbtk.sh
+sbatch run_gtdbtk.sh
+```
+
 ### Output Description
 
 Once your MAGs have finished processing, you will see the following structure inside the `gtdbtk_out` folder:
