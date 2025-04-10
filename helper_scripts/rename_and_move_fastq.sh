@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define paths
-parent_folder="/path/to/metawrap_qc_out/folder"
-destination_folder="/path/to/cleaned_reads/folder"
+parent_folder="/path/to/metawrap_qc_out/folder/"
+destination_folder="/path/to/cleaned_reads/folder/"
 
 # Loop through subfolders in the parent folder
 for subdir in "$parent_folder"/*/; do
