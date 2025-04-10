@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define file paths
-MAGs_pass="/path/to/MAGs_pass/folder"
+MAGs_pass="/path/to/MAGs_pass/folder/"
 MAGs_path_and_name="batchfile.txt"
 
 # Create or clear the output file
