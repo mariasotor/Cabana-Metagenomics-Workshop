@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Define the parent directory
-parent_folder="/path/to/refinement/folder"
+parent_folder="/path/to/refinement/folder/"
 
 # Loop through each sample ID folder
 for sample_folder in "$parent_folder"/*/; do
