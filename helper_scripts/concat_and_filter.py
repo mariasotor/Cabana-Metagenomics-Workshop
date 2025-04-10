@@ -7,8 +7,8 @@ import shutil
 # Define paths
 checkm2_output_path = "/path/to/checkm2/quality_report.tsv"
 gunc_output_path = "/path/to/gunc/GUNC.progenomes_2.1.maxCSS_level.tsv"
-mag_source_dir = "/path/to/refinement/folder"
-destination_dir = "/path/to/MAGs_pass/folder"
+mag_source_dir = "/path/to/refinement/folder/"
+destination_dir = "/path/to/MAGs_pass/folder/"
 filtered_output_path = "gunc_and_checkm2_output_pass.csv"
 
 # Ensure the destination directory exists
