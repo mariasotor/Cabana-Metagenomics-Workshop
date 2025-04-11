@@ -185,7 +185,7 @@ stb_representatives="path/to/representative_genomes.stb"
 # Loop through each line of the manifest file (skipping the header)
 tail -n +2 "$manifest" | while IFS=',' read -r sample R1 R2; do
     
-    msamtools profile bowtie_mapping_out/${sample}.sorted.bam --multi=proportional --label="$sample" --unit=ab --genome $stb_representatives -o msamtools_out/$sample.profile.txt.gz 
+    msamtools profile bowtie_mapping_out/${sample}.sorted.bam --multi=proportional --label="$sample" --unit=ab --nolen --genome $stb_representatives -o msamtools_out/$sample.profile.txt.gz 
 
 done
 ```
@@ -199,7 +199,7 @@ sbatch run_msamtools_profile.sh
 
 To handle multi-mapping inserts (reads aligning to multiple representative sequences), the `--multi=proportional` option is used. This method assigns counts proportionally based on the relative abundance of representative sequences, calculated using only uniquely mapped reads. By distributing counts in this way, it prevents overestimation of highly similar sequences, leading to more accurate abundance estimates. 
 
-The abundance of each MAG is reported as normalized read counts (--unit=ab), representing the number of read pairs mapped to each representative sequence, normalized by sequence length.
+The abundance of each MAG is reported as raw read counts (`--unit=ab`), representing the number of read mapped to each representative genome without sequence length normalization (`--nolen`).
 
 ### Output Decription
 
