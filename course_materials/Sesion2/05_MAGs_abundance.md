@@ -185,7 +185,7 @@ stb_representatives="path/to/representative_genomes.stb"
 # Loop through each line of the manifest file (skipping the header)
 tail -n +2 "$manifest" | while IFS=',' read -r sample R1 R2; do
     
-    msamtools profile bowtie_mapping_out/${sample}.sorted.bam --multi=proportional --label="$sample" --unit=ab --nolen --genome $stb_representatives -o msamtools_out/$sample.profile.txt.gz 
+    msamtools profile bowtie_mapping_out/${sample}.sorted.bam --multi=proportional --label="$sample" --unit=ab --genome $stb_representatives -o msamtools_out/$sample.profile.txt.gz 
 
 done
 ```
@@ -197,9 +197,15 @@ chmod +x run_msamtools_profile.sh
 sbatch run_msamtools_profile.sh
 ```
 
-To handle multi-mapper inserts (reads aligning to multiple representative sequences), the `--multi=proportional` option is used. This method assigns counts proportionally based on the relative abundance of representative sequences, calculated using only uniquely mapped reads. By distributing counts in this way, it prevents overestimation of highly similar sequences, leading to more accurate abundance estimates. 
+To handle multi-mapping inserts (reads aligning to multiple representative sequences), the `--multi=proportional` option is used. This method assigns counts proportionally based on the relative abundance of representative sequences, calculated using only uniquely mapped reads. By distributing counts in this way, it prevents overestimation of highly similar sequences, leading to more accurate abundance estimates. 
 
-The abundance of each MAG is reported as raw read counts (`--unit=ab`), representing the number of read pairs mapped to each representative sequence without normalization for sequence length (`--nolen`). Custom normalization will be applied later in the Ecological Analysis section.
-
+The abundance of each MAG is reported as normalized read counts (--unit=ab), representing the number of read pairs mapped to each representative sequence, normalized by sequence length.
 
 ### Output Decription
+
+Once the abundance estimation process is complete, the `msamtools_out` directory will contain the following file:
+
+📂 `msamtools_out`/ <br>
+│── 📄 `MAG_ID.profile.txt.gz`
+
+msamtools generates a compressed file (`.gz`) by default. To open and inspect this file, you first need to uncompress it using: `gunzip msamtools_out/*.gz`. The resulting file contains mapping statistics and abundance estimates for each representative MAG analyzed in this process. 
