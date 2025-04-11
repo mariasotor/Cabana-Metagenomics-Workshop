@@ -77,7 +77,7 @@ These files together form the FM-index (Ferragina-Manzini index), a compressed r
 
 ###  Create and Execute the Bash Script for Bowtie2 Mapping
 
-To map your sample reads to the set of representative genomes, create a Bash script named run_bowtie2_mapping.sh. Copy the script below and update the index and manifest variables with the correct paths to the Bowtie2 index you previously constructed and your cleaned reads manifest file, respectively.
+To map your sample reads to the set of representative genomes, create a Bash script named `run_bowtie2_mapping.sh`. Copy the script below and update the `index` and `manifest` variables with the correct paths to the Bowtie2 index you previously constructed and your cleaned reads manifest file, respectively.
 
 ```
 #!/bin/bash
@@ -147,8 +147,59 @@ Once the mapping and filtering processes are complete, the `bowtie_mapping_out` 
 
 This file stores high-confidence alignments to the reference genomes and serves as one of the input files for the final step: abundance estimation using msamtools profile.
 
-### Create the contig-to-bin mapping table for msamtools profile 
+### Create the contig-to-bin table for msamtools profile 
+
+A contig-to-bin table (.stb file) is typically required by abundance profilers to associate contigs with their corresponding MAGs. This table is essential for estimating the abundance of each MAG by mapping aligned reads to specific contigs within the reference genomes.
+
+The .stb file should have two columns:
+- Contig ID – The unique identifier of each contig, as found in the reference genome FASTA files.
+- MAG ID – The corresponding MAG to which each contig belongs.
+
+To create this table, we will use a modified version of a Python script originally developed by the dRep team. Ensure you update the path to the `dereplicated_genomes` folder before running the script:
+
+`python /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts/parse_stb.py -f /path/to/dereplicated/genomes/* -o reference_genomes.stb`
+
+This script will process the MAGs FASTA files, extract contig IDs, and assign them to their respective MAGs, generating a properly formatted .stb file for use with msamtools profile.
 
 ### Create and Execute the Bash Script to run msamtools
+
+Once the contig-to-bin table has been generated, create a Bash script named `run_msamtools_profile.sh`. Copy the script below and update the `stb_representatives` and `manifest` variables with the correct paths. This script submits a SLURM job to process each sample listed in the manifest file for abundace estimation of MAGs. 
+
+```
+#!/bin/bash
+
+#SBATCH -J msamtools_profile
+#SBATCH -D .
+#SBATCH -e msamtools_profile_%j.err
+#SBATCH -o msamtools_profile_%j.out
+#SBATCH --cpus-per-task=8
+#SBATCH --time=1:00:00	
+#SBATCH --mem=1000
+
+source /hpcfs/home/cursos/bioinf-cabana/conda/bin/activate
+conda activate msamtools
+
+manifest="/path/to/your/cleaned/reads/manifest.csv"
+stb_representatives="path/to/reference_genomes.stb"
+
+# Loop through each line of the manifest file (skipping the header)
+tail -n +2 "$manifest" | while IFS=',' read -r sample R1 R2; do
+    
+    msamtools profile bowtie_mapping_out/${sample}.sorted.bam --multi=proportional --label="$sample" --unit=ab --nolen --genome $stb_representatives -o msamtools_out/$sample.profile.txt.gz 
+
+done
+```
+
+After creating and saving the script, make it executable and submit to the cluster:
+
+```
+chmod +x run_msamtools_profile.sh
+sbatch run_msamtools_profile.sh
+```
+
+To handle multi-mapper inserts (reads aligning to multiple reference sequences), the `--multi=proportional` option is used. This method assigns counts proportionally based on the relative abundance of reference sequences, calculated using only uniquely mapped reads. By distributing counts in this way, it prevents overestimation of highly similar sequences, leading to more accurate abundance estimates. 
+
+The abundance of each MAG is reported as raw read counts (`--unit=ab`), representing the number of read pairs mapped to each reference sequence without normalization for sequence length (`--nolen`). Custom normalization will be applied later in the Ecological Analysis section.
+
 
 ### Output Decription
