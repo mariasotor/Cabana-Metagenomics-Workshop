@@ -1,4 +1,4 @@
-# Abundance and AMR Genes Annotation Analysis in R
+# Abundance and AMR Genes Annotation Analyses in R
 
 This sesion focuses on exploring microbial community structure using abundance data and performing a descriptive analysis of antimicrobial resistance (AMR) gene annotations. We will use R and RStudio for data processing and visualization. The following R packages will be utilized:
 
