@@ -8,6 +8,6 @@ The metagenomic samples that will be analized througout this workshop were colle
 
 The metagenome analysis will follow the steps outlined in the diagram below.
 
-![image](https://github.com/user-attachments/assets/7b167054-300f-4eaa-85b0-a6a6ecaa6767)
+![metagenomics_workflow](https://github.com/user-attachments/assets/41754ef1-330b-4cf2-800d-307e64baa501)
 
 ---
