@@ -6,7 +6,7 @@ Throughout the workshop, participants will gain knowledge in the analysis and in
 
 The metagenomic samples that will be analized througout this workshop were collected as part of the *CABANAnet project "Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk."* DNA was extracted from stool samples from rural communities in Colombia and Argentina and sent for shotgun sequencing via NovaSeq 6000 (150 bp PE).
 
-The metagenome analysis will follow the steps outlined in the diagram below.
+The metagenomic analysis workflow followed in the workshop is summarized in the diagram below.
 
 ![metagenomics_workflow](https://github.com/user-attachments/assets/41754ef1-330b-4cf2-800d-307e64baa501)
 
