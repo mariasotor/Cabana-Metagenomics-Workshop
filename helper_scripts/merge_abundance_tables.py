@@ -18,6 +18,9 @@ for file in profile_files:
     # Remove '.fa' from genome_id, if it exists
     df["genome_id"] = df["genome_id"].apply(lambda x: x.replace(".fa", "") if x.endswith(".fa") else x)
     
+    # Drop duplicate genome IDs, keeping the first occurrence
+    df = df.drop_duplicates(subset="genome_id", keep="first")
+    
     # Store abundance values in a dictionary with genome IDs as keys
     abundance_dict[sample_id] = df.set_index("genome_id")["abundance"]
 
