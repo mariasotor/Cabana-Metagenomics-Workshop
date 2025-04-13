@@ -16,7 +16,7 @@ Check this [file]() to locate the sample ID assigned to you.
 
 - **Step 3: Copy your sample's FASTQ files** <br>
 Once you have your sample ID, copy the corresponding FASTQ files into your `fastq` folder by running the following command inside the `01_raw_reads` directory: <br>
-`cp /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_raw_reads/SampleID*.fastq fastq/`
+`cp /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_raw_reads/SampleID_*.fastq fastq/`
   > **_Note:_**  Replace `SampleID` with your actual assigned ID (e.g. `50027_1_1`).
 
 ### Read QC Module Overview
