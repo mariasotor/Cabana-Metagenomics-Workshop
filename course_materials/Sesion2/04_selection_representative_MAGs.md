@@ -16,18 +16,26 @@ Create a new folder named `08_drep`. Inside this folder, create the following su
 
 ### Generating Required Input Files
 
-We will use the Dereplicate workflow in dRep, which requires a set of MAGs as input. These MAGs can be specified using wildcard expansion (MAGs_folder/*) or provided in a text file listing the paths to each MAG (used here). Using a text file helps avoid potential OS-related issues when handling large datasets.
+To run the dereplicate workflow in dRep, two key input files are needed:
 
-Additionally, dRep incorporate completeness and contamination values to aid in selecting the best representative genome. By default, dRep calculates these metrics using CheckM, but since we have already obtained them using CheckM2 in previous steps, we will provide this information using the `--genomeInfo option`. The genome information file should be a CSV table with three columns: MAG ID, completeness, contamination.
+1. **File with paths to MAGs for deplication**
 
-To create the text file listing the paths to each MAG, run the following command inside the `08_drep` directory:
-`ls -1 -d /path/to/MAGs_pass/folder/*.fa > MAGs_path_file.txt`
+dRep requires a list of MAGs to process. These can be specified using wildcard expansion (e.g., `MAGs_folder/*`), but we will instead provide a text file listing the full paths to each MAG. This method is more robust and helps prevent issues related to handling large datasets.
 
-To generate the genome information file, use the `generate_genome_info_file.sh` script located at /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts. Copy the script to your `08_drep` directory, update the `checkm2_and_gunc_out_concat_pass` variable with the correct path, and execute it using `bash generate_genome_info_file.sh`.
+The MAGs to be processed are those that passed the quality filters. As we will need the MAGs from all samples, your instructor will prepare a folder named `all_MAGs_pass`, containing all MAGs inside each participant’s `05_MAGs_qc/MAGs_pass` folder. This shared directory will be located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop`
+
+To generate the text file containing the list of MAG paths, run the following command from inside the `08_drep` directory:
+`ls -1 -d /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass/*.fa > MAGs_path_file.txt`
+
+2. **File with completeness and contamination information for all MAGs**
+
+dRep uses completeness and contamination metrics to identify the best representative genome in each cluster. Although dRep can compute these using CheckM by default, we will supply our own metrics obtained from CheckM2 in earlier steps. We will provide this information using the `--genomeInfo option`. The genome information file should be a CSV table with three columns: MAG ID, completeness, contamination.
+
+Your instructor will generate this file (`genome_info_file.csv`) using the gunc_and_checkm2_output_pass.csv files from each participant. The resulting file will be placed in `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass`.
 
 ### Create and Execute the Bash Scripts to Run dRep
 
-To dereplicate the specified set of MAGs, create a Bash script named `run_drep.sh`, copy the script below, and update the `MAGs_path_file` and `genome_info_file` variables with the correct paths before running. 
+To dereplicate the specified set of MAGs, create a Bash script named `run_drep.sh`, copy the script below, and update the `MAGs_path_file`  variable with the correct path before running. 
 
 This script submits a SLURM job to run dRep using 8 threads. It applies a minimum completeness threshold of 50% and maximum contamination of 5% to filter MAGs. FastANI is used for genome comparisons, with an ANI threshold of 95% for clustering. Additionally, a minimum genome coverage of 30% is required for valid genome alignments.
 
@@ -46,7 +54,7 @@ source /hpcfs/home/cursos/bioinf-cabana/conda/bin/activate
 conda activate drep
 
 MAGs_path_file="/path/to/MAGs_path_file.txt"
-genome_info_file="/path/to/genome_info_file.csv"
+genome_info_file="/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass/genome_info_file.csv"
 
 dRep dereplicate ./drep_out -g $MAGs_path_file -p 8 -comp 50 -con 5 --S_ani 0.95 --cov_thresh 0.30 --S_algorithm fastANI --genomeInfo $genome_info_file
 
