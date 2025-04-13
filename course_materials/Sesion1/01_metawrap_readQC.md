@@ -1,6 +1,23 @@
 # Quality Control of Metagenomic Reads Using the Read QC Module in metaWRAP
 
-Each participant will analyze one metagenomic sample containing approximately 15 million reads. The sequencing data is provided in FASTQ format (.fastq) and should be stored in a folder named `01_raw_reads`. These files will serve as input for the Read QC module of metaWRAP.
+### Accessing Your Metagenomic Sample
+
+Each participant will work with one metagenomic sample containing approximately 15 million sequencing reads. The data is provided in FASTQ format (`.fastq`).
+To obtain the reads for your assigned sample, follow these steps:
+
+- **Step 1: Create the directory structure** <br>
+Create a folder named `01_raw_reads`, and inside it, create a subfolder named `fastq`:
+   
+  📂 `01_raw_reads`/ <br>
+  ├── 📁 `fastq`/ 
+
+- **Step 2: Find your assigned sample ID** <br>
+Check this [file]() to locate the sample ID assigned to you.
+
+- **Step 3: Copy your sample's FASTQ files** <br>
+Once you have your sample ID, copy the corresponding FASTQ files into your `fastq` folder by running the following command inside the `01_raw_reads` directory: <br>
+`cp /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_raw_reads/SampleID*.fastq fastq/`
+  > **_Note:_**  Replace `SampleID` with your actual assigned ID (e.g.,` 50027_1_1`).
 
 ### Read QC Module Overview
 
@@ -12,14 +29,14 @@ The Read QC module of metaWRAP performs three key steps:
 
 ### Preparing the Manifest File
 
-Before running the metaWRAP Read QC module, you need to create a manifest file in the `01_raw_reads` directory to reference the paired sequencing files. This file must be in comma-separated (CSV) format with three columns: ID (Sample identifier), R1 (Path to the forward read file), R2 (Path to the reverse read file). The manifest file ensures a standardized input format and facilitates scalability. 
+Before running the metaWRAP Read QC module, you need to create a manifest file in the `01_raw_reads` directory to reference the sequencing files you just copied. This file must be in comma-separated (CSV) format with three columns: ID (Sample identifier), R1 (Path to the forward read file), R2 (Path to the reverse read file). The manifest file ensures a standardized input format and facilitates scalability. 
 
 To contruct such manifest follow the instructions here: [generate_manifest](
 https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/helper_scripts/generate_manifest.md)
 
 ### Setting Up Output Directories
 
-Once the manifest file is ready, create a new folder named `02_clean_reads`. Inside this folder, create two  subdirectories:
+Once the manifest file is ready, create a new folder named `02_clean_reads`. Inside this folder, create two subdirectories:
 
 📂 `02_clean_reads`/ <br>
 ├── 📁 `metawrap_qc_out`/ <br>
