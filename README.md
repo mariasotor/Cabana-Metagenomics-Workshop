@@ -11,3 +11,23 @@ The metagenome analysis will follow the steps outlined in the diagram below.
 ![metagenomics_workflow](https://github.com/user-attachments/assets/41754ef1-330b-4cf2-800d-307e64baa501)
 
 ---
+
+## Workshop Material
+
+The course is divided into three sessions. You can access the materials for each session using the links below:
+
+### Sesion 1
+- [Quality Control of Metagenomic Reads](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion1/01_metawrap_readQC.md)
+- [Assembly of Metagenomic Reads](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion1/02_metawrap_assembly.md)
+- [Binning and Binning Refinement](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion1/03_metawrap_binning_and_refinement.md)
+
+### Sesion 2
+- [Quality Control of Metagenome-Assembled Genomes (MAGs)](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/01_MAGs_QC.md)
+- [Taxonomic Classification of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/02_MAGs_taxonomy.md)
+- [Functional Annotation of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/03_MAGs_functional_annotation.md)
+- [Selection of Representative MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/04_selection_representative_MAGs.md)
+- [Abundance Estimation of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/05_MAGs_abundance.md)
+
+### Sesion 3
+- [Abundance and AMR Genes Annotation Analyses in R](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/tree/main/course_materials/Sesion3)
+
