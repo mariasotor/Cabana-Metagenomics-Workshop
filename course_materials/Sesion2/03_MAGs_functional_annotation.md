@@ -1,4 +1,4 @@
-### Functional Annotation of MAGs
+# Functional Annotation of MAGs
 
 Functional annotation of MAGs is essential to gain insigth into their metabolic potential, ecological roles, and biotechnological or biomedical applications.
 
