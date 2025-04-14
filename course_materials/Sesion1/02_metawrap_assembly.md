@@ -2,7 +2,7 @@
 
 ### Asembly module overwiew
 
-The metaWRAP Assembly module enables users to assemble metagenomic reads using either metaSPAdes or MEGAHIT (default). During the process, short contigs (<1000 bp) are removed to improve assembly quality. Additionally, a assembly report is generated using QUAST, providing metrics for evaluating the results.
+The metaWRAP Assembly module enables users to assemble metagenomic reads using either metaSPAdes or MEGAHIT (default). During the process, short contigs (<1000 bp) are removed to improve assembly quality. Additionally, an assembly report is generated using QUAST, providing metrics for evaluating the results.
 
 ### Preparing the Manifest File
 
