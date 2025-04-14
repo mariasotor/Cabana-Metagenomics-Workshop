@@ -20,7 +20,7 @@ Create a new folder named `07_MAGs_func_annotation` Inside this folder, create t
 
 ### Create and Execute the Bash Scripts to Run AMRfinderPlus and Bakta
 
-To run the tools, create two Bash scripts: `run_amrfinder.sh` and `run_bakta.sh`. Copy the scripts below accordingly. Before executing them, update the `batchfile` variable with the correct path to your previously created batchfile. Limit the analysis of Bakta to a maximum of 12 MAGs due to time constraints. You can make a copy of your original batchfile and save a modified version with a subset of your MAGs inside the `07_MAGs_func_annotation` directory. AMRFinderPlus can process all MAGs listed in your original batchfile.
+To run the tools, create two Bash scripts: `run_amrfinder.sh` and `run_bakta.sh`. Copy the scripts below accordingly. Before executing them, update the `batchfile` variable with the correct path to your previously created batchfile.
 
 Each script submits a SLURM job to functionally annotate the specified MAGs, storing results in their respective output directories: `amrfinder_out` and `bakta_out`.
 
@@ -86,13 +86,13 @@ sbatch run_amrfinder.sh
 
 After completing the functional annotation process, the `07_MAGs_func_annotation` directory will have the following structure
 
-📂 07_MAGs_func_annotation/ <br> 
-│── 📂 amrfinder_out/  <br>
-│   ├── 📄 MAG_ID.tsv  (antimicrobial resistance gene predictions)  <br>
+📂 `07_MAGs_func_annotation`/ <br> 
+│── 📂 `amrfinder_out`/  <br>
+│   ├── 📄 `MAG_ID.tsv`  (antimicrobial resistance gene predictions)  <br>
 │  <br>
-│── 📂 bakta_out/  <br>
-│   ├── 📂 MAG_ID/  <br>
-│       ├── 📄 MAG_ID.tsv  (functional annotation for predicted genes) <br>
+│── 📂 `bakta_out`/  <br>
+│   ├── 📂 `MAG_ID`/  <br>
+│       ├── 📄 `MAG_ID.tsv`  (functional annotation for predicted genes) <br>
 │       ├── Multiple files containing:  <br>
 │           • **Gene predictions and functional features identification** (e.g., CDS, rRNA, tRNA annotations)  
 │           • **Functional annotations** (e.g., protein functions, pathways)  
