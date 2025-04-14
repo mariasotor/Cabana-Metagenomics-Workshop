@@ -25,7 +25,7 @@ Once you have your sample ID, copy the corresponding FASTQ files into your `fast
 The Read QC module of metaWRAP performs three key steps:
 
 - **Adapter and quality trimming** – Uses Trim Galore (default settings) to remove adapters and low-quality bases.
-- **Human contamination removal** – Employs BMTagger with the CHM13 human genome assembly.
+- **Human contamination removal** – Employs BMTagger with the especified version of the human genome assembly.
 - **Quality assessment** – Generates a visual quality report with FastQC.
 
 ### Preparing the Manifest File
@@ -92,12 +92,10 @@ Once your samples have finished processing, you will see the following structure
 │   ├── 📄 `host_reads_2.fastq`  <br>
 
 - `final_pure_reads_1.fastq` and `final_pure_reads_2.fastq` – These are the final trimmed and decontaminated reads, ready for downstream analysis.
-- `host_reads_1.fastq` and `host_reads_2.fastq` – These are reads identified as host contamination and can be safely deleted.
+- `host_reads_1.fastq` and `host_reads_2.fastq` – These are reads identified as host contamination.
 - `pre-QC_report` and `post-QC_report` – These directories contain FastQC html quality reports for the reads before and after quality control.
 
-To facilitate downstream analysis, the final_pure_reads files should be renamed as sampleID_1.fastq and sampleID_2.fastq (e.g., 50027_3_3_1.fastq and 50027_3_3_2.fastq) and moved to the cleaned_reads folder created earlier.
+To facilitate downstream analysis, the `final_pure_reads` files should be renamed as `sampleID_1.fastq` and `sampleID_2.fastq` (e.g., 50027_3_3_1.fastq and 50027_3_3_2.fastq) and moved to the cleaned_reads folder created earlier.
 
-To rename and move the files, use the `rename_and_move_fastq.sh` script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script file to your `02_clean_reads` directory, open it, and update the `parent_folder` and `destination_folder` variables with the correct path. Then, run the script using `bash rename_and_move_fastq.sh`
-
-
+To rename and move the files, use the `rename_and_move_fastq.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script file to your `02_clean_reads` directory, open it, and update the `parent_folder` and `destination_folder` variables with the correct path. Then, run the script using `bash rename_and_move_fastq.sh`
 
