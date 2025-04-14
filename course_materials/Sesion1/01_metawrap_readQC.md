@@ -12,12 +12,13 @@ Create a folder named `01_raw_reads`, and inside it, create a subfolder named `f
   ├── 📁 `fastq`/ 
 
 - **Step 2: Find your assigned sample ID** <br>
-Check this [file]() to locate the sample ID assigned to you.
+Check this [file](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/get_your_sample_ID.md) to locate the sample ID assigned to you.
 
 - **Step 3: Copy your sample's FASTQ files** <br>
 Once you have your sample ID, copy the corresponding FASTQ files into your `fastq` folder by running the following command inside the `01_raw_reads` directory: <br>
 `cp /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_raw_reads/SampleID_*.fastq fastq/`
-  > **_Note:_**  Replace `SampleID` with your actual assigned ID (e.g. `50027_1_1`).
+  > **_Note:_**:  Replace `SampleID` with your actual sample ID (e.g., `50027_1_1`).
+   Make sure to include the underscore (`_`) after your sample ID to match the correct files.
 
 ### Read QC Module Overview
 
