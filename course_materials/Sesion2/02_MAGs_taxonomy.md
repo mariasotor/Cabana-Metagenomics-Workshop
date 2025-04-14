@@ -14,7 +14,7 @@ Create a new folder named `06_MAGs_taxonomy` Inside this folder, create the foll
 
 ### Create and Execute the Bash Script to Run GTDB-Tk
 
-Since GTDB-Tk requires high RAM usage (~100 GB), **this step will be demonstrative**, and only the instructor will execute it. However, below are the steps you can follow to run the program.
+Since GTDB-Tk requires high RAM usage (~100 GB), **this step will be demonstrative**, and only the instructor will execute it. However, below are the steps to follow for your reference.
 
 Create a Bash script named `run_gtdbtk.sh`, copy the script below, and update the `batchfile` variable with the correct path to your previously created batchfile. This script submits a SLURM job to process each MAG listed in the batch file, generating a taxonomic classification output in the `gtdbtk_out` folder.
 
