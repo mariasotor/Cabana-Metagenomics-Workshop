@@ -10,7 +10,7 @@ The metagenomic analysis workflow followed in the workshop is summarized in the 
 
 ![metagenomics_workflow](https://github.com/user-attachments/assets/41754ef1-330b-4cf2-800d-307e64baa501)
 
-> **_Note:_** For a comparison between this workflow and the one used in the CABANAnet project *"Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk"*, please refer to this [document](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/workflow_comparative_benchmarking.md)
+> **_Note:_** For a comparison between this workflow and the one used in the CABANAnet project *"Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk"*, please refer to this [document](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/workflow_comparative_benchmarking.md).
 ---
 
 ## Workshop Material
