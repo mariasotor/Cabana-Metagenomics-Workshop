@@ -88,7 +88,7 @@ Once the binning and bin refinement procesess have finished, you will see the fo
 │     ├── 📄 `metabat2_bins.contigs` <br>
 │     ├── 📄 `metabat2_bins.stats` <br>
 │     ├── 📄 `metawrap_50_5_bins.contigs` <br> 
-│     ├── 📄 `metawrap_50_5_binsstats` 
+│     ├── 📄 `metawrap_50_5_bins.stats` 
 
 
 - `maxbin2_bins` and `metabat2_bins` – Genome bins (FASTA files) generated using MaxBin2 and MetaBAT2, respectively. 
@@ -99,8 +99,8 @@ Once the binning and bin refinement procesess have finished, you will see the fo
 - `maxbin2_bins.contigs`, `metabat2_bins.contigs`, `metawrap_50_5_bins.contigs` – Files specifying which contig belongs to which bin.
 - `maxbin2_bins.stats`, `metabat2_bins.stats`, `metawrap_50_5_bins.stats` – Summary statistics of bins from each binner and after refinement (e.g., completeness, contamination, GC content, size).
 
-To facilitate downstream analysis, the sey of bins in the `metawrap_50_5_bins` directory should be renamed as sampleID_binIdenfier.fa (e.g., 50027_3_3_bin.2.fa, 50027_3_3_bin.2.fa, etc.).
+To facilitate downstream analysis, the set of bins in the `metawrap_50_5_bins` directory should be renamed as sampleID_binIdenfier.fa (e.g., 50027_3_3_bin.1.fa, 50027_3_3_bin.2.fa, etc.).
 
-To rename the files, use the `rename_bins.sh` script located at located at /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts. Copy the script file to your `04_binning_and_refinement` directory, open it, and update the `parent_folder` variable with the correct path. Then, run the script using `bash rename_bins.sh`.
+To rename the files, use the `rename_bins.sh` script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script file to your `04_binning_and_refinement` directory, open it, and update the `parent_folder` variable with the correct path. Then, run the script using `bash rename_bins.sh`.
 
 
