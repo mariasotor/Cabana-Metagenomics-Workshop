@@ -24,18 +24,18 @@ dRep requires a list of MAGs to process. These can be specified using wildcard e
 
 The MAGs to be processed are those that passed the quality filters. As we will need the MAGs from all samples, your instructor will prepare a folder named `all_MAGs_pass`, containing all MAGs inside each participant’s `05_MAGs_qc/MAGs_pass` folder. This shared directory will be located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop`
 
-To generate the text file containing the list of MAG paths, run the following command from inside the `08_drep` directory:
+To generate the text file containing the list of MAG paths, run the following command inside the `08_drep` directory:
 `ls -1 -d /hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass/*.fa > MAGs_path_file.txt`
 
 2. **File with completeness and contamination information for all MAGs**
 
-dRep uses completeness and contamination metrics to identify the best representative genome in each cluster. Although dRep can compute these using CheckM by default, we will supply our own metrics obtained from CheckM2 in earlier steps. We will provide this information using the `--genomeInfo option`. The genome information file should be a CSV table with three columns: MAG ID, completeness, contamination.
+dRep uses completeness and contamination metrics to identify the best representative genome in each cluster. Although dRep can compute these using CheckM by default, we will supply our own metrics obtained from CheckM2 in earlier steps. We will provide this information using the `--genomeInfo` option. The genome information file should be a CSV table with three columns: MAG ID, completeness, contamination.
 
-Your instructor will generate this file (`genome_info_file.csv`) using the gunc_and_checkm2_output_pass.csv files from each participant. The resulting file will be placed in `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass`.
+Your instructor will generate this file (`genome_info_file.csv`) using the `gunc_and_checkm2_output_pass.csv` files from each participant. The resulting file will be placed in `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass`.
 
 ### Create and Execute the Bash Scripts to Run dRep
 
-To dereplicate the specified set of MAGs, create a Bash script named `run_drep.sh`, copy the script below, and update the `MAGs_path_file`  variable with the correct path before running. 
+To dereplicate the specified set of MAGs, create a Bash script named `run_drep.sh`, copy the script below, and update the `MAGs_path_file` variable with the correct path before running. 
 
 This script submits a SLURM job to run dRep using 8 threads. It applies a minimum completeness threshold of 50% and maximum contamination of 5% to filter MAGs. FastANI is used for genome comparisons, with an ANI threshold of 95% for clustering. Additionally, a minimum genome coverage of 30% is required for valid genome alignments.
 
@@ -88,7 +88,7 @@ Once the dereplication process is complete, you will see the following structure
 Before concatenating dereplicated MAGs for Bowtie2 indexing, contig names must be unique to prevent conflicts. For this reason, we will modify the contig names using the format `MAG_ID_c_contig_number`.
 Example: `49647_1_2_bin.1_c_000000000001`, `49647_1_2_bin.1_c_000000000002`, `49647_1_2_bin.1_c_000000000003`, etc.
 
-To acieve this, use the `change_contigs_name.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `08_drep` directory, update the `input_dir` variable with the correct path, and execute it using `bash change_contigs_name.sh`.
+To achieve this, use the `change_contigs_name.sh` script located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `08_drep` directory, update the `input_dir` variable with the correct path, and execute it using `bash change_contigs_name.sh`.
 
 This will rename all contigs in the MAGs within the `dereplicated_genomes` directory to the specified format.
 
