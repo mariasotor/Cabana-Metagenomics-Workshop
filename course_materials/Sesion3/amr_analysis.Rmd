@@ -1,0 +1,60 @@
+---
+title: "CABANAnet Workshop - Antimicrobial Resitance Genes (AMR) Analysis"
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: console
+---
+
+
+````{r message=FALSE, warning=FALSE}
+# Load/install required packages
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(RColorBrewer)
+
+````
+
+```{r}
+
+# Load required data
+amr_data <- read.csv("all_AMR_genes.csv", stringsAsFactors = FALSE)
+
+```
+
+### Process Data Before Plotting
+```{r}
+
+df_amr_summary <- amr_data %>%
+  mutate(Class = tolower(Class_x)) %>% # 'Class' column values to lowercase
+  group_by(Class, Order, sampling_location) %>% # group data before summarization
+  summarise(count = n(), .groups = "drop")   # Summarize the grouped data by counting the number of rows in each group (get gene counts for each taxonomic order)
+
+# Reorder 'Order' based on the total count (from highest to lowest)
+df_amr_summary <- df_amr_summary %>%
+  mutate(Order = factor(Order, levels = df_amr_summary %>%
+                          group_by(Order) %>%
+                          summarise(total = sum(count)) %>%
+                          arrange(desc(total)) %>%
+                          pull(Order)))
+
+```
+
+### Plot - AMR Gene Counts by Taxonomic Order and Sampling Location
+```{r}
+
+# Create the stacked bar plot
+ggplot(df_amr_summary , aes(x = Class, y = count, fill = Order)) +
+  geom_bar(stat = "identity") +
+  labs(x = "AMR Class", y = "Count", fill = "Order") +
+  scale_fill_brewer(palette = "Paired")+
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  facet_wrap(~sampling_location, scales = "free_x")
+
+
+
+```
+
