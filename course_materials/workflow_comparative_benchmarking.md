@@ -1,4 +1,4 @@
-# Comparison Between Two Metagenomic Workflows for MAG Reconstruction and Quality Control
+# Comparison Between Two Metagenomic Workflows for MAGs Reconstruction and Quality Control
 
 This document presents a comparison between the metagenomic analysis workflow used in this course and the one applied in the CABANAnet project *"Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk"*.
 
