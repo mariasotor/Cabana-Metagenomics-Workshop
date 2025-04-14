@@ -2,10 +2,10 @@
 
 ### Tools Overview
 
-Evaluating the quality of metagenome-assembled genomes (MAGs) is crucial to ensure they meet medium to high-quality standards and are free from contamination. This guide covers the use of CheckM2 and GUNC to assess genome completeness, contamination, and potential chimerism.
+Evaluating the quality of metagenome-assembled genomes (MAGs) is crucial to ensure they meet quality standards and are free from contamination. This guide covers the use of CheckM2 and GUNC to assess genome completeness, contamination, and potential chimerism.
 
 - **CheckM2**: Estimates genome completeness and contamination by analyzing the presence of single-copy marker genes. 
-- **GUNC** (Genome UNClutterer): Detects chimeric MAGs and taxonomic contamination by analyzing phylogenetic inconsistencies. This ensures that MAGs represent single, coherent genome rather than an assemblies of multiple organisms.
+- **GUNC** (Genome UNClutterer): Detects chimeric MAGs and taxonomic contamination by analyzing phylogenetic inconsistencies. This ensures that MAGs represent a single, coherent genome rather than an assemblies of multiple organisms.
 
 ### Setting Up Output Directories
 
@@ -98,7 +98,7 @@ Once the processes are complete, the `05_MAGs_qc` directory will contain the fol
 
 The set of curated MAGs includes MAGs that passed GUNC’s contamination checks and meet the quality threshold of contamination < 5% and completeness > 50%.
 
-To obtain your set of curated MAGs, use the `concat_and_filter.py` python script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script file to your `checkm2_and_gunc_out_concat` directory, open it, and update the `checkm2_output_path`,  `gunc_output_path`, `mag_source_dir`, and `destination_dir` variables with the correct path. Then, ensure the Python_3.13.2 Conda environment is activated and run the script using `python concat_and_filter.py`.
+To obtain your set of curated MAGs, use the `concat_and_filter.py` python script located at located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script file to your `checkm2_and_gunc_out_concat` directory, open it, and update the `checkm2_output_path`,  `gunc_output_path`, `mag_source_dir`, and `destination_dir` variables with the correct path. Then, ensure the `Python_3.13.2` Conda environment is activated and run the script using `python concat_and_filter.py`.
 
 This script generates a `.csv` file named `gunc_and_checkm2_output_pass.csv`, containing CheckM2 and GUNC report data for MAGs that meet the quality criteria. It then searches for these MAGs within the refined bins directory and copies them to the `MAGs_pass` directory for downstream analysis.
 
