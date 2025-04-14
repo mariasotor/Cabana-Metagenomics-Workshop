@@ -24,7 +24,7 @@ Create a new folder named `09_abundance_estimation`. Inside this folder, create 
 
 **Step 1: Concatenate Representative MAGs**
 
-Before building the Bowtie2 index, all representative MAGs must be combined into a single FASTA file. Use the `concat_mags.sh script`, located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `09_abundance_estimation` directory, update the `dereplicated_genomes` variable with the correct path, and execute it using `bash concat_mags.sh`.
+Before building the Bowtie2 index, all representative MAGs must be combined into a single FASTA file. Use the `concat_mags.sh` script, located at `/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/helper_scripts`. Copy the script to your `09_abundance_estimation` directory, update the `dereplicated_genomes` variable with the correct path, and execute it using `bash concat_mags.sh`.
 
 This will generate a file named `representative_genomes.fasta` in your current directory, containing all merged MAGs.
 
@@ -77,7 +77,7 @@ These files together form the FM-index (Ferragina-Manzini index), a compressed r
 
 ###  Create and Execute the Bash Script for Bowtie2 Mapping
 
-To map your sample reads to the set of representative genomes, create a Bash script named `run_bowtie2_mapping.sh`. Copy the script below and update the `index` and `manifest` variables with the correct paths to the Bowtie2 index you previously constructed and your cleaned reads manifest file, respectively.
+To map your sample reads to the set of representative genomes, create a Bash script named `run_bowtie2_mapping.sh`. Copy the script below and update the `index` and `manifest` variables with the correct paths to the Bowtie2 index you previously constructed and the cleaned reads manifest file, respectively.
 
 ```
 #!/bin/bash
@@ -130,7 +130,7 @@ sbatch run_bowtie2_mapping.sh
 This script submits a SLURM job to process each sample listed in the manifest file by:
 
 1. Mapping paired-end reads to the set of representative MAGs using bowtie2.
-2. Converting the resulting SAM file to BAM format while filtering out reads that failed to map (-F 4).
+2. Converting the resulting SAM file to BAM format while filtering out reads that failed to map (`-F 4`).
 3. Filtering alignments using msamtools, retaining only reads that:
    - Are at least 80 bp long (`-l 80`).
    - Have at least 95% identity with the MAG representative (`-p 95`).
@@ -149,7 +149,7 @@ This file stores high-confidence alignments to the representative genomes and se
 
 ### Create the contig-to-bin table for msamtools profile 
 
-A contig-to-bin table (.stb file) is typically required by abundance profilers to associate contigs with their corresponding MAGs. This table is essential for estimating the abundance of each MAG by mapping aligned reads to specific contigs within the representative genomes.
+A contig-to-bin table (.stb file) is typically required by abundance profilers to associate contigs with their corresponding MAGs.
 
 The .stb file should have two columns:
 - Contig ID – The unique identifier of each contig, as found in the representative genome FASTA files.
