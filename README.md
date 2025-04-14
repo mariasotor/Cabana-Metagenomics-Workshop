@@ -4,12 +4,13 @@ This workshop focuses on the analysis of human gut metagenomic data. The workflo
 
 Throughout the workshop, participants will gain knowledge in the analysis and interpretation of metagenomic data. They will also gain hands-on experience using an High-performance computing (HPC) cluster to run various bioinformatics tools for quality control, assembly, and binning of short metagenomic reads, as well as for taxonomic identification, functional annotation, and abundance estimation of bacterial genomes. Additionally, participants will perform ecological analyses in R, exploring microbial community composition and diversity, and will carry out a descriptive analysis of antimicrobial resistance (AMR) genes annotations.
 
-The metagenomic samples that will be analized througout this workshop were collected as part of the *CABANAnet project "Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk."* DNA was extracted from stool samples from rural communities in Colombia and Argentina and sent for shotgun sequencing via NovaSeq 6000 (150 bp PE).
+The metagenomic samples that will be analized througout this workshop were collected as part of the CABANAnet project *"Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk."* DNA was extracted from stool samples from rural communities in Colombia and Argentina and sent for shotgun sequencing via NovaSeq 6000 (150 bp PE).
 
 The metagenomic analysis workflow followed in the workshop is summarized in the diagram below.
 
 ![metagenomics_workflow](https://github.com/user-attachments/assets/41754ef1-330b-4cf2-800d-307e64baa501)
 
+> **_Note:_** For a comparison between this workflow and the one used in the CABANAnet project *"Exploring the Human Gut Microbiome Diversity in Latin America: Focus on Populations at Nutritional Risk"*, please refer to this [document](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/workflow_comparative_benchmarking.md)
 ---
 
 ## Workshop Material
