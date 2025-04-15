@@ -27,8 +27,8 @@ The course is divided into three sessions. You can access the materials for each
 - [Taxonomic Classification of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session2/02_MAGs_taxonomy.md)
 - [Functional Annotation of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session2/03_MAGs_functional_annotation.md)
 - [Selection of Representative MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session2/04_selection_representative_MAGs.md)
-- [Abundance Estimation of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion2/05_MAGs_abundance.md)
+- [Abundance Estimation of MAGs](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session2/05_MAGs_abundance.md)
 
 ### Session 3
-- [Abundance and AMR Genes Annotation Analyses in R](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/tree/main/course_materials/Sesion3)
+- [Abundance and AMR Genes Annotation Analyses in R](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/tree/main/course_materials/Session3)
 
