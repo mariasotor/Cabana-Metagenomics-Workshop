@@ -109,7 +109,7 @@ tail -n +2 "$manifest" | while IFS=',' read -r sample R1 R2; do
     # Using msamtools to filter aligments
     msamtools filter -b -l 80 -p 95 -z 80 bowtie_mapping_out/${sample}-RAW.bam > bowtie_mapping_out/${sample}.filtered.bam
     
-    # Sort BAM file by name (needed for masamtools filter)
+    # Sort BAM file by name (needed for masamtools profile)
     samtools sort -n -@ 4 bowtie_mapping_out/${sample}.filtered.bam -o bowtie_mapping_out/${sample}.sorted.bam
    
     rm bowtie_mapping_out/${sample}.sam
