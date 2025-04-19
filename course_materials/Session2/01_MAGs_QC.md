@@ -4,8 +4,8 @@
 
 Evaluating the quality of metagenome-assembled genomes (MAGs) is crucial to ensure they meet quality standards and are free from contamination. This guide covers the use of CheckM2 and GUNC to assess genome completeness, contamination, and potential chimerism.
 
-- **CheckM2**: Estimates genome completeness and contamination by analyzing the presence of single-copy marker genes. 
-- **GUNC** (Genome UNClutterer): Detects chimeric MAGs and taxonomic contamination by analyzing phylogenetic inconsistencies. This ensures that MAGs represent a single, coherent genome rather than an assemblies of multiple organisms.
+- **CheckM2**: uses machine learning models instead of static marker gene sets like CheckM. This allows for more flexible and accurate predictions, especially for unusual or underrepresented organisms
+- **GUNC**: Detects chimeric MAGs and taxonomic contamination by analyzing phylogenetic inconsistencies. This ensures that MAGs represent a single, coherent genome rather than an assemblies of multiple organisms.
 
 ### Setting Up Output Directories
 
