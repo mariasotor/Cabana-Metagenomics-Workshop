@@ -3,7 +3,7 @@
 ### GTDB-Tk overview
 GTDB-Tk enable the taxonomic classifications of bacterial and archaeal genomes based on the Genome Database Taxonomy GTDB. The classification of a query genome is based on a combination of its placement in the GTDB reference tree, its Relative Evolutionary Divergence (RED), and its Average Nucleotide Identity (ANI) with reference genomes. Tree topology usually determines classification, but RED helps resolve ambiguous rank assignments. 
 
-For the taxonomic classification of MAGs, we will use the Classify Workflow in GTDB-Tk and the latest GTDB database release (r220).
+For the taxonomic classification of MAGs, we will use the Classify Workflow in GTDB-Tk and the GTDB database release r220.
 
 ### Setting Up Output Directories
 
