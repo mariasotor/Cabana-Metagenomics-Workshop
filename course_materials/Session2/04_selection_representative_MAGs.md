@@ -46,7 +46,7 @@ This script submits a SLURM job to run dRep using 8 threads. It applies a minimu
 #SBATCH -D .
 #SBATCH -e drep_%j.err
 #SBATCH -o drep_%j.out
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=6
 #SBATCH --time=2:00:00	
 #SBATCH --mem=6000
 
@@ -56,7 +56,7 @@ conda activate drep
 MAGs_path_file="/path/to/MAGs_path_file.txt"
 genome_info_file="/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/all_MAGs_pass/genome_info_file.csv"
 
-dRep dereplicate ./drep_out -g $MAGs_path_file -p 8 -comp 50 -con 5 --S_ani 0.95 --cov_thresh 0.30 --S_algorithm fastANI --genomeInfo $genome_info_file
+dRep dereplicate ./drep_out -g $MAGs_path_file -p 6 -comp 50 -con 5 --S_ani 0.95 --cov_thresh 0.30 --S_algorithm fastANI --genomeInfo $genome_info_file
 
 ```
 
