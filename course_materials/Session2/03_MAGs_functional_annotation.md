@@ -95,7 +95,7 @@ After completing the functional annotation process, the `07_MAGs_func_annotation
 │       ├── 📄 `MAG_ID.tsv`  (functional annotation for predicted genes) <br>
 │       ├── Multiple files containing:  <br>
 │           • **Gene predictions and functional features identification** (e.g., CDS, rRNA, tRNA annotations)  
-│           • **Functional annotations** (e.g., protein functions, pathways)  
+│           • **Functional annotations**  
 │           • **Hypothetical proteins** and their potential functional inference  
 │           • **GenBank & EMBL-compatible files** for database submissions  
 │           • **Visualization files** (e.g., genome feature maps in PNG, SVG)  
