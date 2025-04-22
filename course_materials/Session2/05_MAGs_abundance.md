@@ -86,7 +86,7 @@ To map your sample reads to the set of representative genomes, create a Bash scr
 #SBATCH -D .
 #SBATCH -e bowtie_mapping_%j.err
 #SBATCH -o bowtie_mapping_%j.out
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=6
 #SBATCH --time=1:00:00	
 #SBATCH --mem=6000
 
@@ -101,7 +101,7 @@ index="/path/to/bowtie_index_out/folder/"
 tail -n +2 "$manifest" | while IFS=',' read -r sample R1 R2; do
         
     # Bowtie2 mapping
-    bowtie2 --threads 8 -x $index/INDEX -1 "$R1" -2 "$R2" -S bowtie_mapping_out/${sample}.sam
+    bowtie2 --threads 6 -x $index/INDEX -1 "$R1" -2 "$R2" -S bowtie_mapping_out/${sample}.sam
 
     # Convert SAM to BAM
     samtools view -F 4 -bS bowtie_mapping_out/${sample}.sam > bowtie_mapping_out/${sample}-RAW.bam
