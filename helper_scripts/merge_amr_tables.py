@@ -34,12 +34,12 @@ for file_path in amr_files:
 # Concatenate all DataFrames into one
 consolidated_df = pd.concat(dataframes, ignore_index=True)
 
-# Drop duplicate user_genome entries
-consolidated_df = consolidated_df.drop_duplicates(subset='user_genome', keep='first')
+# remove duplictate entries
+consolidated_df = consolidated_df.drop_duplicates()
 
 
 # Load the taxonomy information table
-tax_table = '/hpcfs/home/cursos/bioinf-cabana/cabana_workshop/final_tables/all_MAGs_taxonomy.csv' 
+tax_table = '/hpcfs/home/cursos/bioinf-cabana/.asoto/cabana_samples_analysis/09_abundance_estimation/final_abundace_table/all_MAGs_taxonomy.csv' 
 tax_df = pd.read_csv(tax_table)
 
 # Merge the two DataFrames on the 'user_genome' column
