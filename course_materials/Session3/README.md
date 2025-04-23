@@ -35,9 +35,9 @@ Below is a description of each required file:
 **You can access and download the R scripts used for each analysis from the links below**:
 
 **Ecological Analysis**:
-[R Notebook](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion3/ecological_analysis.html)
+[R Notebook](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session3/ecological_analysis.html)
 
 **AMR genes Annotation Analysis**:
-[R Notebook](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Sesion3/amr_genes_analysis.html)
+[R Notebook](https://github.com/mariasotor/Cabana-Metagenomics-Workshop/blob/main/course_materials/Session3/amr_genes_analysis.html)
 
 
