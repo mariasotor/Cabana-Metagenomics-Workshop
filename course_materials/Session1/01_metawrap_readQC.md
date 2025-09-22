@@ -74,8 +74,8 @@ done
 After creating and saving the script, make it executable and submit it to the cluster:
 
 ```
-chmod +x run_metawrap.sh
-sbatch run_metawrap.sh
+chmod +x run_metawrap_qc.sh
+sbatch run_metawrap_qc.sh
 ```
 
 ### Output Description
